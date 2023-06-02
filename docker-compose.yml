@@ -1,0 +1,19 @@
+# docker-compose 를 이용해 elasticsearch 와 kibana 를 구동하는 파일입니다.
+# 터미널에서 저장된 폴더로 이동하여 docker-compose up 명령을 실행하여 구동합니다.
+version: '3'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.12.0
+    container_name: elasticsearch
+    ports:
+      - 9200:9200
+    environment:
+      - discovery.type=single-node
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.12.0
+    container_name: kibana
+    ports:
+      - 5601:5601
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
