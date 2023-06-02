@@ -2,6 +2,8 @@
 
 Guide : https://blog.tedhome.net/113
 
+<b>프로젝트를 실행하기 전에 docker-compose.yml 파일을 이용해 localhost 에 elasticsearch 를 구동시켜야 합니다.</b>
+
 1. SpringBoot
    - version : 3.1.0
 2. Defendency
